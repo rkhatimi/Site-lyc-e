@@ -1,0 +1,293 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:
+        radial-gradient(
+            ellipse at 15% 20%,
+            rgba(40, 90, 255, 0.14),
+            transparent 40%
+        ),
+        radial-gradient(
+            ellipse at 85% 70%,
+            rgba(140, 50, 255, 0.11),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #080b16,
+            #101426,
+            #090b12
+        );
+
+    color: white;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* En-tête */
+
+header {
+    min-height: 80px;
+    padding: 0 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #20243a;
+}
+
+header h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: #aeb3c7;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Section principale */
+
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 100px 8%;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 700px;
+    transform: translateY(-200px);
+}
+
+.surtitre {
+    color: #8b91ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    font-size: 80px;
+    line-height: 0.98;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+}
+
+.hero h2 span {
+    display: block;
+    color: white;
+}
+
+.description {
+    color: #aeb3c7;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 550px;
+    margin-bottom: 35px;
+}
+
+/* Boutons */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.2s;
+    background: linear-gradient(90deg,#313d68 , #1f2850);
+    color: white;
+}
+
+.primary:hover {
+    background: linear-gradient(90deg,#313d68 , #1f2850);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+
+.outils {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 0 4%;
+    margin-top: -350px;
+    padding-bottom: 40px;
+    position: relative;
+    z-index: 2;
+    
+}
+
+.carte {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    min-width: 0;
+    min-height: 125px;
+    padding: 22px 20px;
+
+    color: #fff;
+    text-decoration: none;
+    background: rgba(18, 27, 52, 0.82);
+    border: 1px solid #737b9c;
+    border-radius: 12px;
+
+    transition:
+        background 0.2s,
+        border-color 0.2s,
+        transform 0.2s;
+}
+
+.carte:hover {
+    background: rgba(27, 38, 69, 0.95);
+    border-color: #58658b;
+    transform: translateY(-4px);
+}
+
+.carte h3 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 600;
+    color: #e9ecf7;
+}
+
+.carte p {
+    margin: 0;
+    color: #b8bfd3;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Adaptation aux écrans plus petits */
+
+@media (max-width: 1000px) {
+    .hero {
+        gap: 20px;
+        padding: 80px 5%;
+    }
+
+    .hero h2 {
+        font-size: 58px;
+    }
+
+    .image {
+        transform: translateY(-50px);
+    }
+
+    .image img {
+        height: 450px;
+    }
+
+    .outils {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: -200px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: auto;
+        min-height: 80px;
+        padding: 20px 5%;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 65px 5% 80px;
+        gap: 10px;
+    }
+
+    .hero-text {
+        transform: none;
+    }
+
+    .hero h2 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    .button {
+        padding: 13px 16px;
+        font-size: 14px;
+    }
+
+    .image {
+        transform: none;
+    }
+
+    .image img {
+        height: auto;
+        max-height: 380px;
+    }
+
+    .outils {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+        padding: 0 5% 30px;
+    }
+
+    .carte {
+        min-height: 100px;
+    }
+}
